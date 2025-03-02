@@ -26,6 +26,10 @@
   transition: all 0.2s linear;
 }
 
+
+
+
+
 html {
   font-size: 70%;
   overflow-x: hidden;
@@ -126,6 +130,7 @@ section{
 }
 
 
+
 .home{
   padding:0;
 
@@ -174,16 +179,14 @@ p{
   }
 }
 
-
-
-
-
-
+}
 
 @media (max-width: 1200px){
   .header{
     padding: 1.5rem 2rem;
   }
+
+  
 
   section{
     padding:3rem 5%;
@@ -200,31 +203,117 @@ p{
     padding:3rem 2rem;
   }
 
-.header{
-
-  .navbar{
+  .header .navbar {
     position: absolute;
-    top:99%; left:0; right:0;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: var(--white);
-    border-top: var(--border);
-    border-bottom: var(--border);
+   
+    
+    display: none; 
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+}
 
-    a{
-display: block;
-margin: 2rem;
-    }
+
+@keyframes dropdownFade {
+  0% {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
   }
 }
+
+
+
+
+.header .navbar.active {
+  display: flex !important; /* Force visibility */
+  flex-direction: row;
+  position: absolute;
+  top: 100%;
+  left: 6%;
+  width: 100%;
+  background: rgba(192, 92, 38, 0.719); /* Brownish transparent background */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border: 1px solid rgba(255, 235, 205, 0.5); /* Light brown border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  z-index: 1000;
+  text-align: center;
+  padding: 2rem 0;
+  
+    animation: dropdownFade 0.4s ease-in-out;
+  
+}
+
+
+.header .navbar a {
+  display: block;
+  padding: 1rem;
+  font-size: 1rem;
+  color: white; /* Ensure contrast */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.header .navbar a:hover {
+  color: rgba(255, 235, 205, 0.9); /* Lighter brown hover effect */
+}
+
+
+
+  #menu-btn {
+      display: block;
+      position: absolute;
+      right: 2rem;
+      top: 1.5rem;
+      color: var(--black);
+      z-index: 1001;
+  }
+
 }
 
 
 @media (max-width:450px){
   html{
-    font-size: 50%
+    font-size: 40%
   }
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  .about-us .row {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-/*# sourceMappingURL=styles.css.map */
+
+@media (max-width: 600px) {
+  h3 {
+    font-size: 2.5rem; /* Reduce heading size */
+  }
+  
+  p {
+    font-size: 1.5rem; /* Reduce paragraph size */
+  }
+}
+
+/* For small phones */
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+
 
 
 
@@ -240,7 +329,8 @@ margin: 2rem;
 }
 
 .about-us .row .image img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .about-us .row .content {

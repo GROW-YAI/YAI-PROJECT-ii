@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let menuBtn = document.querySelector("#menu-btn");
+    let navbar = document.querySelector(".navbar");
+
+    if (!menuBtn || !navbar) {
+        console.error("Menu button or navbar not found!");
+        return;
+    }
+
+    menuBtn.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        menuBtn.classList.toggle("fa-times"); // Toggles icon between bars and close
+    });
+});
+
+
     // Smooth Scrolling
     document.querySelectorAll('.navbar a').forEach(link => {
         link.addEventListener('click', function (e) {
@@ -23,6 +38,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
-
-
+;

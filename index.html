@@ -34,9 +34,10 @@
 <a href="#about-innovator">About Innovator</a>
 <a href="#contact">Contact</a>
 
-
-
 </nav>
+<div id="menu-btn" class="fas fa-bars"></div>
+
+
 </header>
 <!--Header ends here-->
 
@@ -218,12 +219,13 @@
         <!-- Right Side - Contact Form -->
         <div class="contact-form">
             <h2>Send Us a Message</h2>
-            <form action="#">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <form action="mailto:aduafia60@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+            
         </div>
 
 </div>
