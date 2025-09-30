@@ -26,10 +26,6 @@
   transition: all 0.2s linear;
 }
 
-
-
-
-
 html {
   font-size: 70%;
   overflow-x: hidden;
@@ -200,7 +196,7 @@ p{
 
 @media (max-width:991px){
   html{
-    font-size: 55%;
+    font-size: 70%;
   }
 
   section{
@@ -285,7 +281,7 @@ p{
 
 @media (max-width:450px){
   html{
-    font-size: 40%
+    font-size: 65%
   }
 }
 
@@ -313,7 +309,7 @@ p{
 /* For small phones */
 @media (max-width: 360px) {
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
