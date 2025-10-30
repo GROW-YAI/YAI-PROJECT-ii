@@ -180,6 +180,67 @@ p{
 }
 
 }
+/* ===== HAMBURGER ICON ===== */
+#menu-btn {
+  font-size: 2rem;
+  color: var(--brown);
+  cursor: pointer;
+  display: none; /* Hidden by default on desktop */
+}
+
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 991px) {
+  #menu-btn {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    z-index: 1001;
+  }
+
+  .header .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(180, 123, 77, 0.95);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    animation: dropdownFade 0.4s ease-in-out;
+  }
+
+  .header .navbar.active {
+    display: flex;
+  }
+
+  .header .navbar a {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 0;
+  }
+
+  .header .navbar a:hover {
+    color: rgba(255, 235, 205, 0.9);
+  }
+
+  /* Animation */
+  @keyframes dropdownFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 
 @media (max-width: 1200px){
   .header{
@@ -374,8 +435,12 @@ text-align: justify;
   }
   
   .btn:hover {
-    background-color: darken(var(--brown), 10%); /* Darker shade on hover */
-    transform: scale(1.05); /* Slight size increase */
+  background-color: #d65b17; /* a bit lighter than your base brown */
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
   }
   
   .btn:active {
